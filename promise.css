@@ -163,6 +163,9 @@ form{
     transition: 200ms ease;
     cursor: pointer;
 }
+.custom-checkbox svg{
+    fill: var(--primary-color);
+}
 input[type="checkbox"]:checked ~ .custom-checkbox{
     background-color: var(--accent-color);
 }
@@ -200,6 +203,7 @@ input[type="checkbox"]{
 #about-alert div p a{
     text-decoration: underline;
     color: #0088ff;
+    outline: none;
 }
 #about-alert button{
     align-self: center;
@@ -220,6 +224,7 @@ input[type="checkbox"]{
     html{
         font-size: 12px;
     }
+    
     #add-button{
         width: 15px;
         display: flex;
@@ -232,6 +237,9 @@ input[type="checkbox"]{
     }
     #add-button span{
         display: none;
+    }
+    #todo-input{
+        font-size: 17px;
     }
     #add-button::after{
         content: "+";
