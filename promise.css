@@ -1,0 +1,245 @@
+@font-face {
+    font-family: "Inter";
+    src: url(Inter-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+    font-family: "Hand";
+    src: url(Nunito-VariableFont_wght.ttf);
+}
+
+:root{
+    --background: #101114;
+    --primary-color: #1C1D20;
+    --secondary-color: #4A4D57;
+    --accent-color: #0088ff;
+    --text-color: #F9F9F9;
+}
+.dark-theme{
+    --background: #f7f7f7;
+    --primary-color: #e3e3e3;
+    --secondary-color: #4A4D57;
+    --accent-color: #0088ff;
+    --text-color: #121212;
+}
+#mytheme{
+    cursor:pointer;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Inter";
+  font-size: 16pt;
+  color: var(--text-color);
+}
+body{
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 95%;
+    height: 50px;
+}
+
+
+.switch{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+.switch li{
+    list-style: none;
+    fill: var(--text-color);
+    transition: all 0.2s;
+}
+.switch li:hover{
+    transform: scale(1.09);   
+}
+h1{
+    margin-top: 90px;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+.wrapper{
+    width: 700px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#todo-input{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+}
+#todo-input:focus{
+    outline: none;
+}
+#todo-input::placeholder{
+    font-weight: 300;
+}
+form{
+    position: relative;
+}
+#add-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: var(--accent-color);
+    height: 100%;
+    width: 100px;
+    padding: 0 25px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background);
+    cursor: pointer;
+}
+.todo{
+
+    margin-bottom: 10px;
+    padding: 0 1rem;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Hand";
+    font-size: 16px;
+}
+.todo .todo-text{
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
+    transition: 200ms ease;
+}
+.delete-button{
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.delete-button svg{
+    transition: 200ms ease;
+}
+.delete-button:hover svg{
+    fill: #ff0033;
+}
+.custom-checkbox{
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked ~ .custom-checkbox{
+    background-color: var(--accent-color);
+}
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+    fill: var(--primary-color);
+}
+input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+input[type="checkbox"]{
+    display: none;
+}
+
+#about-alert{
+    margin: auto;
+    inset: 0;
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: #efefef;
+    border: none;
+    box-shadow:     0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
+
+
+}
+#about-alert div{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+#about-alert div p a{
+    text-decoration: underline;
+    color: #0088ff;
+}
+#about-alert button{
+    align-self: center;
+    width: max-content;
+    min-width: 120px;
+    min-height: 2rem;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 2rem;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.551);
+    cursor: pointer;
+}
+#about-alert::backdrop{
+    background-color: rgba(2, 2, 2, 0.551);
+}
+@media(max-width: 500px){
+    html{
+        font-size: 12px;
+    }
+    #add-button{
+        width: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        width: 30px;
+        height: 100%;
+    }
+    #add-button span{
+        display: none;
+    }
+    #add-button::after{
+        content: "+";
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 6px;
+    }
+    .switch{
+        gap: 25px
+    }
+}
