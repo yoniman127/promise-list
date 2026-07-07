@@ -51,6 +51,7 @@ body{
     width: 100%;
     max-width: 95%;
     height: 50px;
+    position: fixed;
 }
 
 
@@ -224,7 +225,6 @@ input[type="checkbox"]{
     html{
         font-size: 12px;
     }
-    
     #add-button{
         width: 15px;
         display: flex;
